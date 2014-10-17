@@ -8,16 +8,33 @@
 
                 <checkout>
 
+                    <customer>
+                        <email>devnull@code-x.de</email>
+                        <firstname>Vorname</firstname>
+                        <lastname>Nachname</lastname>
+                    </customer>
+
                     <addtocart>
+
                         <!--
                         <product>
-                            <sku>1234</sku>
+                            <sku>test-01</sku>
                             <qty>1</qty>
                         </product>
                         -->
+
                     </addtocart>
 
                     <billing_address>
+
+                        <firstname>test vornanme</firstname>
+                        <lastname>test name</lastname>
+                        <company>firma</company>
+                        <telephone>123456</telephone>
+                        <street1>Teststraße 32</street1>
+                        <city>Teststadt</city>
+                        <postcode>33100</postcode>
+                        <use_for_shipping_no>1</use_for_shipping_no>
 
                     </billing_address>
 
@@ -31,6 +48,10 @@
 
                     <payment_method>
                         <method>debit</method>
+
+                        <kontoinhaber>Inhaber Test</kontoinhaber>
+                        <swiftcode>switcode Test</swiftcode>
+                        <iban>Iban Test</iban>
                     </payment_method>
 
                 </checkout>
