@@ -14,7 +14,7 @@ class Codex_Basictests_Test_Selenium_AccountTest extends Codex_Xtest_Xtest_Selen
         parent::setUpBeforeClass();
 
         self::$_customerFixture = Xtest::getXtest('xtest/fixture_customer');
-        self::$_customer = self::$_customerFixture->getTest();
+        self::$_customer = self::$_customerFixture->getTest( false );
     }
 
     public function testLogin()
