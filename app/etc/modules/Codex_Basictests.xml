@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Codex_Basictests>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Codex_Xtest/>
+            </depends>
+        </Codex_Basictests>
+    </modules>
+</config>

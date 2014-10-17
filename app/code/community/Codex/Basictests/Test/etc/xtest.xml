@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+
+    <default>
+        <xtest>
+
+            <selenium>
+
+                <checkout>
+
+                    <addtocart>
+                        <!--
+                        <product>
+                            <sku>1234</sku>
+                            <qty>1</qty>
+                        </product>
+                        -->
+                    </addtocart>
+
+                    <billing_address>
+
+                    </billing_address>
+
+                    <shipping_address>
+
+                    </shipping_address>
+
+                    <shipping_method>
+                        <method>flatrate_flatrate</method>
+                    </shipping_method>
+
+                    <payment_method>
+                        <method>debit</method>
+                    </payment_method>
+
+                </checkout>
+
+
+            </selenium>
+
+        </xtest>
+    </default>
+
+</config>
