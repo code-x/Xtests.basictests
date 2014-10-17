@@ -57,35 +57,57 @@ class Codex_CustomDesign_Test_Selenium_CheckoutTest extends Codex_Xtest_Xtest_Se
         $cartPageObject = $this->getPageObject('xtest/pageobject_frontend_cart');
         $cartPageObject->open();
 
-        $cartPageObject->takeScreenshot('products in cart');
+        $cartPageObject->takeResponsiveScreenshots('products in cart');
 
         $this->assertEquals( count($cartConfig), count( $cartPageObject->getItems() ), 'cart is missing some items' );
 
         $cartPageObject->clickProceedCheckout();
-        //$this->assertContains('checkout/onepage/', $this->getBrowserUrl()->getValue() ); // TODO
+        $this->assertContains('checkout/onepage/', $this->url() );
 
         // ---
 
         /** @var $checkoutPageObject Codex_Xtest_Xtest_Pageobject_Frontend_Checkout */
         $checkoutPageObject = $this->getPageObject('xtest/pageobject_frontend_checkout');
 
+        $checkoutPageObject->takeResponsiveScreenshots('login');
         $checkoutPageObject->login( self::$_customerEmail, self::$_customerPassword );
         $checkoutPageObject->assertStepIsActive('billing');
 
         // ---
 
         $checkoutPageObject->setBillingAddress();
-        $checkoutPageObject->takeScreenshot('billing address');
+        $checkoutPageObject->takeResponsiveScreenshots('billing address');
         $checkoutPageObject->nextStep();
 
         // ---
 
-        // TODO: Shipping
+        // TODO: Shipping Address
 
         // ---
 
+        $checkoutPageObject->assertStepIsActive('shipping_method');
+        $checkoutPageObject->setShippingMethod();
+        $checkoutPageObject->takeResponsiveScreenshots('shipping method');
+        $checkoutPageObject->nextStep();
 
+        // ---
 
+        $checkoutPageObject->assertStepIsActive('payment');
+        $checkoutPageObject->setPaymentMethod();
+        $checkoutPageObject->takeResponsiveScreenshots('payment method');
+        $checkoutPageObject->nextStep();
+
+        // ---
+
+        $checkoutPageObject->assertStepIsActive('review');
+        $checkoutPageObject->acceptAgreements();
+        $checkoutPageObject->takeResponsiveScreenshots('review');
+        $checkoutPageObject->nextStep();
+
+        // ---
+
+        $checkoutPageObject->takeResponsiveScreenshots();
+        $checkoutPageObject->assertIsSuccessPage();
 
 
 
