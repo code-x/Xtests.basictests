@@ -1,6 +1,6 @@
 <?php
 
-class Codex_Basictests_Test_Selenium_NotFoundTest extends Codex_Xtest_Xtest_Selenium_TestCase {
+class Codex_Basictests_Test_Selenium_SearchTest extends Codex_Xtest_Xtest_Selenium_TestCase {
 
     /**
      * Extrahiere anhand eines Produktes einen Namen und suche diesen
@@ -25,7 +25,7 @@ class Codex_Basictests_Test_Selenium_NotFoundTest extends Codex_Xtest_Xtest_Sele
                 $page->takeResponsiveScreenshots();
 
                 $text = $page->byTag('body')->text();
-                $this->assertNotContains( Mage::helper('core')->__('Your search returns no results.') ,$text);
+                $this->assertNotContains( 'Ihre Suchanfrage lieferte keine Ergebnisse' ,$text);
                 return;
 
             }
@@ -46,7 +46,7 @@ class Codex_Basictests_Test_Selenium_NotFoundTest extends Codex_Xtest_Xtest_Sele
         $page->takeResponsiveScreenshots();
 
         $text = $page->byTag('body')->text();
-        $this->assertContains( Mage::helper('core')->__('Your search returns no results.') ,$text);
+        $this->assertContains( 'Ihre Suchanfrage lieferte keine Ergebnisse' ,$text);
 
     }
 
