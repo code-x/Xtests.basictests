@@ -1,6 +1,6 @@
 <?php
 
-class Codex_CustomDesign_Test_Selenium_CheckoutTest extends Codex_Xtest_Xtest_Selenium_TestCase
+class Codex_Basictests_Test_Selenium_CheckoutTest extends Codex_Xtest_Xtest_Selenium_TestCase
 {
 
     protected static $_customerEmail;
