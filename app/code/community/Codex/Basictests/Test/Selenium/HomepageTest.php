@@ -18,12 +18,13 @@ class Codex_Basictests_Test_Selenium_HomepageTest extends Codex_Xtest_Xtest_Sele
     {
         /** @var Codex_Xtest_Xtest_Pageobject_Frontend_Homepage $homepage */
         $homepage = $this->getPageObject('xtest/pageobject_frontend_homepage');
+        $homepage->open();
 
         $text = $homepage->byTag('body')->text();
 
         $this->assertContains( Mage::helper('core')->__('Imprint'), $text );
         $this->assertContains( Mage::helper('core')->__('AGB'), $text );
-        $this->assertContains( Mage::helper('core')->__('Contact'), $text );
+        $this->assertContains( Mage::helper('core')->__('Kontakt'), $text );
     }
 
     /**
@@ -33,6 +34,7 @@ class Codex_Basictests_Test_Selenium_HomepageTest extends Codex_Xtest_Xtest_Sele
     {
         /** @var Codex_Xtest_Xtest_Pageobject_Frontend_Homepage $homepage */
         $homepage = $this->getPageObject('xtest/pageobject_frontend_homepage');
+        $homepage->open();
 
         $homepage->byLinkText(  Mage::helper('core')->__('AGB') )->click();
         $homepage->takeResponsiveScreenshots('agb');
@@ -45,6 +47,7 @@ class Codex_Basictests_Test_Selenium_HomepageTest extends Codex_Xtest_Xtest_Sele
     {
         /** @var Codex_Xtest_Xtest_Pageobject_Frontend_Homepage $homepage */
         $homepage = $this->getPageObject('xtest/pageobject_frontend_homepage');
+        $homepage->open();
 
         $homepage->byLinkText(  Mage::helper('core')->__('Imprint') )->click();
         $homepage->takeResponsiveScreenshots('imprint');
